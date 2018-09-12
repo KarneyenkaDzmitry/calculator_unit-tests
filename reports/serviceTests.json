@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2018-09-12T12:48:58.355Z",
-    "end": "2018-09-12T12:48:58.355Z",
-    "duration": 0,
+    "start": "2018-09-12T13:38:07.105Z",
+    "end": "2018-09-12T13:38:07.115Z",
+    "duration": 10,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "7e1e186a-6e24-44e6-8cdd-25bd00ccfef2",
+    "uuid": "5a1c6dff-b145-477d-baf0-c19b240701ab",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,39 +28,71 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "7adc33f6-70a7-48ae-986b-eada7a8f96b8",
-        "title": "The first test",
+        "uuid": "a98c84c3-d062-4d2a-9b5e-725f27930747",
+        "title": "tests [add] method of Calculator.prototype ",
         "fullFile": "C:\\data\\calculator_unit-tests\\test\\unit\\calculator.js",
         "file": "\\test\\unit\\calculator.js",
-        "beforeHooks": [],
-        "afterHooks": [],
-        "tests": [
+        "beforeHooks": [
           {
-            "title": "the first it",
-            "fullTitle": "The first test the first it",
+            "title": "\"before each\" hook",
+            "fullTitle": "tests [add] method of Calculator.prototype  \"before each\" hook",
             "timedOut": false,
             "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "calculator = new Calculator();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "0a1fcce2-dae9-4403-8766-a6effdbcb1e6",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook",
+            "fullTitle": "tests [add] method of Calculator.prototype  \"after each\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "calculator = null;",
+            "err": {},
+            "isRoot": false,
+            "uuid": "c1a21dfb-c05f-40fa-95ef-af5a5825055f",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should return [result of summ the first five numbers]",
+            "fullTitle": "tests [add] method of Calculator.prototype  should return [result of summ the first five numbers]",
+            "timedOut": false,
+            "duration": 1,
             "state": "passed",
             "speed": "fast",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "console.log(calculator.add(1,2,3,4,5));",
+            "code": "const actualResult = calculator.add(1, 2, 3, 4, 5);\nexpect(actualResult).to.be.a('Number');\nexpect(actualResult).to.be.equal(15);",
             "err": {},
             "isRoot": false,
-            "uuid": "5e5a5158-0b69-448c-8184-6a0b8eac9648",
+            "uuid": "d76ca720-202b-4f55-b579-2ec6daacf8cd",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "5e5a5158-0b69-448c-8184-6a0b8eac9648"
+          "d76ca720-202b-4f55-b579-2ec6daacf8cd"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 0,
+        "duration": 1,
         "root": false,
         "rootEmpty": false,
         "_timeout": 1000

@@ -1,0 +1,33 @@
+{
+  "name": "calculator_unit-tests",
+  "version": "1.0.0",
+  "description": "Javascript ( Node.js)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "linter": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarneyenkaDzmitry/calculator_unit-tests.git"
+  },
+  "keywords": [
+    "unit",
+    "test",
+    "moca",
+    "istambul"
+  ],
+  "author": "Dzmitry_Karneyenka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarneyenkaDzmitry/calculator_unit-tests/issues"
+  },
+  "homepage": "https://github.com/KarneyenkaDzmitry/calculator_unit-tests#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.5.0"
+  }
+}

@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "linter": "eslint ./"
+    "test": "mocha",
+    "linter": "eslint ./ --fix"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,10 @@
     "url": "https://github.com/KarneyenkaDzmitry/calculator_unit-tests/issues"
   },
   "homepage": "https://github.com/KarneyenkaDzmitry/calculator_unit-tests#readme",
-  "dependencies": {},
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.3"
+  },
   "devDependencies": {
     "eslint": "^5.5.0"
   }

@@ -6,20 +6,20 @@ class Calculator {
         this.result = 0;
     }
 
-    add() {
+    add(...args) {
         this.result = 0;
-        arguments.array.forEach(element => {
-            result += element;
+        args.forEach(element => {
+            this.result += element;
         });
-        return result;
+        return this.result;
     }
-    
-    multiply() {
+
+    multiply(...args) {
         this.result = 0;
-        arguments.array.forEach(element => {
-            result += element;
+        args.forEach(element => {
+            this.result *= element;
         });
-        return result;
+        return this.result;
     }
 }
 

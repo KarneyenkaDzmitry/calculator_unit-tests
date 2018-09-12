@@ -1,0 +1,79 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-09-12T12:48:58.355Z",
+    "end": "2018-09-12T12:48:58.355Z",
+    "duration": 0,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "7e1e186a-6e24-44e6-8cdd-25bd00ccfef2",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "7adc33f6-70a7-48ae-986b-eada7a8f96b8",
+        "title": "The first test",
+        "fullFile": "C:\\data\\calculator_unit-tests\\test\\unit\\calculator.js",
+        "file": "\\test\\unit\\calculator.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "the first it",
+            "fullTitle": "The first test the first it",
+            "timedOut": false,
+            "duration": 0,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "console.log(calculator.add(1,2,3,4,5));",
+            "err": {},
+            "isRoot": false,
+            "uuid": "5e5a5158-0b69-448c-8184-6a0b8eac9648",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "5e5a5158-0b69-448c-8184-6a0b8eac9648"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 1000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 1000
+  },
+  "copyrightYear": 2018
+}

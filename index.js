@@ -5,8 +5,17 @@ class Calculator {
     constructor() {
         this.result = 0;
     }
+    check(array) {
+        const nan = array.find((element)=>!this.isNumber(element));
+        if (typeof nan !== 'undefined') throw Error(`Was entered wrong parameter [${nan}] that isn't a number`);
+    }
+
+    isNumber(element) {
+        return typeof element === 'number' ? true : false;
+    }
 
     add(...args) {
+        this.check(args);
         this.result = 0;
         args.forEach(element => {
             this.result += element;
@@ -15,6 +24,7 @@ class Calculator {
     }
 
     multiply(...args) {
+        this.check(args);
         this.result = 0;
         args.forEach(element => {
             this.result *= element;

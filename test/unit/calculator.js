@@ -33,5 +33,26 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
         });
     });
 
+    describe('negative tests', () => {
+        dataProvider.negative.forEach(element => {
+            const data = element.data;
 
+            beforeEach(() => {
+                calculator = new Calculator();
+            });
+
+            afterEach(() => {
+                calculator = null;
+            });
+
+            it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
+                expect(calculator.add(...data)).to.throw(TypeError);
+            });
+
+            it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
+                expect(calculator.multiply(...data)).to.throw(TypeError);
+            });
+
+        });
+    });
 });

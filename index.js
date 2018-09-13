@@ -7,7 +7,7 @@ class Calculator {
     }
     check(array) {
         const nan = array.find((element)=>!this.isNumber(element));
-        if (typeof nan !== 'undefined') throw Error(`Was entered wrong parameter [${nan}] that isn't a number`);
+        if (typeof nan !== 'undefined') throw new TypeError(`Was entered wrong parameter [${nan}] that isn't a number`);
     }
 
     isNumber(element) {

@@ -25,7 +25,7 @@ class Calculator {
 
     multiply(...args) {
         this.check(args);
-        this.result = 0;
+        this.result = 1;
         args.forEach(element => {
             this.result *= element;
         });

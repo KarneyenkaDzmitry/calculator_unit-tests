@@ -2,21 +2,36 @@
 
 const Calculator = require('../../index');
 const { expect } = require('chai');
+const dataProvider = require('../data/dataProvider.json');
 
-describe('tests [add] method of Calculator.prototype ', () => {
+describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
     let calculator;
+    describe('positive tests', () => {
+        dataProvider.positive.forEach(element => {
+            const data = element.data;
 
-    beforeEach(() => {
-        calculator = new Calculator();
+            beforeEach(() => {
+                calculator = new Calculator();
+            });
+
+            afterEach(() => {
+                calculator = null;
+            });
+
+            it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
+                const actualResult = calculator.add(...data);
+                expect(actualResult).to.be.a('Number');
+                expect(actualResult).to.be.equal(element.result.add);
+            });
+
+            it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
+                const actualResult = calculator.multiply(...data);
+                expect(actualResult).to.be.a('Number');
+                expect(actualResult).to.be.equal(element.result.multiply);
+            });
+
+        });
     });
 
-    afterEach(() => {
-        calculator = null;
-    });
 
-    it('should return [result of summ the first five numbers]', () => {
-        const actualResult = calculator.add(1, 2, 3, 4, 5);
-        expect(actualResult).to.be.a('Number');
-        expect(actualResult).to.be.equal(15);
-    });
 });

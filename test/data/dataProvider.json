@@ -1,0 +1,55 @@
+{
+    "positive": [
+        {
+            "data": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "result": {
+                "add": 15,
+                "multiply": 120
+            }
+        },
+        {
+            "data": [
+                15,
+                34,
+                56,
+                78,
+                0
+            ],
+            "result": {
+                "add": 183,
+                "multiply": 0
+            }
+        },
+        {
+            "data": [
+                596,
+                2
+            ],
+            "result": {
+                "add": 598,
+                "multiply": 1192
+            }
+        }
+    ],
+    "negative": [
+        {
+            "data": [
+                "G",
+                2,
+                3,
+                4,
+                5
+            ],
+            "result": {
+                "add": "error",
+                "multiply": "error"
+            }
+        }
+    ]
+}

@@ -47,6 +47,36 @@
                 "add": 7,
                 "multiply": 90
             }
+        },
+        {
+            "data": [
+                -3,
+                5,
+                -12,
+                -1
+            ],
+            "result": {
+                "add": -11,
+                "multiply": -180
+            }
+        },
+        {
+            "data": [
+                -3,
+                5,
+                -12,
+                -1,
+                12,
+                54,
+                6,
+                45,
+                7,
+                9
+            ],
+            "result": {
+                "add": 122,
+                "multiply": -1984046400
+            }
         }
     ],
     "negative": [
@@ -70,6 +100,32 @@
                 3,
                 4,
                 5
+            ],
+            "result": {
+                "add": "error",
+                "multiply": "error"
+            }
+        },
+        {
+            "data": [
+                1,
+                2,
+                3,
+                4,
+                "undefined"
+            ],
+            "result": {
+                "add": "error",
+                "multiply": "error"
+            }
+        },
+        {
+            "data": [
+                1,
+                2,
+                "NaN",
+                4,
+                12
             ],
             "result": {
                 "add": "error",

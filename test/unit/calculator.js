@@ -46,11 +46,13 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
             });
 
             it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
-                expect(calculator.add(...data)).to.throw(TypeError);
+                const actualResult = () => calculator.multiply(...data);
+                expect(actualResult).to.throw(TypeError);
             });
 
             it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
-                expect(calculator.multiply(...data)).to.throw(TypeError);
+                const actualResult = () => calculator.multiply(...data);
+                expect(actualResult).to.throw(TypeError);
             });
 
         });

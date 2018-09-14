@@ -10,30 +10,38 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
     describe('positive tests', () => {
         dataProvider.positive.forEach(element => {
             const data = element.data;
-            //let spyAdd, spyMultiply;
+            let spyAdd, spyMultiply;
 
             beforeEach(() => {
+                console.log('BeforeEach');
                 calculator = new Calculator();
-                //chai.spy.on(calculator, 'add');
-                //spyAdd = chai.spy(calculator.add);
-                //spyMultiply = chai.spy(calculator.multiply);
+                //spyAdd = chai.spy.on(calculator, 'add');
+                //spyMultiply = chai.spy.on(calculator, 'multiply');
             });
 
             afterEach(() => {
+                console.log('After each');
                 calculator = null;
             });
 
             it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
-                chai.spy.on(calculator, 'add');
+                console.log('It summation');
+                spyAdd = chai.spy.on(calculator, 'add');
                 const actualResult = calculator.add(...data);
-                expect(calculator.add).to.not.have.been.called;
+                expect(spyAdd).to.be.a.spy;
+                expect(spyAdd).to.have.been.called.once;
+                expect(spyAdd).to.have.been.called.with(...data);
                 expect(actualResult).to.be.a('Number');
                 expect(actualResult).to.be.equal(element.result.add);
             });
 
             it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
+                console.log('It multiplication');
+                spyMultiply = chai.spy.on(calculator, 'multiply');
                 const actualResult = calculator.multiply(...data);
-                //expect(spyMultiply).to.have.been.called;
+                expect(spyMultiply).to.be.a.spy;
+                expect(spyMultiply).to.have.been.called.once;
+                expect(spyMultiply).to.have.been.called.with(...data);
                 expect(actualResult).to.be.a('Number');
                 expect(actualResult).to.be.equal(element.result.multiply);
             });
@@ -48,8 +56,6 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
 
             beforeEach(() => {
                 calculator = new Calculator();
-                spyAdd = chai.spy(calculator.add);
-                spyMultiply = chai.spy(calculator.multiply);
             });
 
             afterEach(() => {
@@ -57,14 +63,22 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
             });
 
             it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
-                const actualResult = () => calculator.multiply(...data);
+                spyAdd = chai.spy.on(calculator, 'add');
+                const actualResult = () => calculator.add(...data);
+                expect(spyAdd).to.be.a.spy;
                 expect(actualResult).to.throw(TypeError);
+                expect(spyAdd).to.have.been.called.once;
+                expect(spyAdd).to.have.been.called.with(...data);
                 expect(spyAdd).to.have.been.called;
             });
 
             it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
+                spyMultiply = chai.spy.on(calculator, 'multiply');
                 const actualResult = () => calculator.multiply(...data);
+                expect(spyMultiply).to.be.a.spy;
                 expect(actualResult).to.throw(TypeError);
+                expect(spyMultiply).to.have.been.called.once;
+                expect(spyMultiply).to.have.been.called.with(...data);
                 expect(spyMultiply).to.have.been.called;
             });
 

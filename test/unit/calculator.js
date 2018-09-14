@@ -1,11 +1,8 @@
 'use strict';
 
 const Calculator = require('../../index');
-const chai = require('chai');
-const spies = require('chai-spies'); 
+const chai = require('chai').use(require('chai-spies'));
 const dataProvider = require('../data/dataProvider.json');
-chai.use(spies);
-
 const expect = chai.expect;
 
 describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
@@ -13,12 +10,13 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
     describe('positive tests', () => {
         dataProvider.positive.forEach(element => {
             const data = element.data;
-            let spyAdd, spyMultiply;
+            //let spyAdd, spyMultiply;
 
             beforeEach(() => {
                 calculator = new Calculator();
-                spyAdd = chai.spy(calculator.add);
-                spyMultiply = chai.spy(calculator.multiply);
+                //chai.spy.on(calculator, 'add');
+                //spyAdd = chai.spy(calculator.add);
+                //spyMultiply = chai.spy(calculator.multiply);
             });
 
             afterEach(() => {
@@ -26,15 +24,16 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
             });
 
             it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
+                chai.spy.on(calculator, 'add');
                 const actualResult = calculator.add(...data);
-                expect(spyAdd).to.have.been.called;
+                expect(calculator.add).to.not.have.been.called;
                 expect(actualResult).to.be.a('Number');
                 expect(actualResult).to.be.equal(element.result.add);
             });
 
             it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
                 const actualResult = calculator.multiply(...data);
-                expect(spyMultiply).to.have.been.called;
+                //expect(spyMultiply).to.have.been.called;
                 expect(actualResult).to.be.a('Number');
                 expect(actualResult).to.be.equal(element.result.multiply);
             });

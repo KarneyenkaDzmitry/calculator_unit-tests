@@ -77,4 +77,4 @@ How to make checks for Errors?<br>
 `e.g. obj.functionName(...[a, b, c, d]) spread converts into obj.functionName(a, b, c, d) `<br><br>
 2. making array from arguments in functions;<br>
 `e.g. function Name(...arg). If we call the function as obj.Name(a, b, c, d), so arg will be an array [a, b, c, d]`<br>
-
+[see documentation](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax)<br>

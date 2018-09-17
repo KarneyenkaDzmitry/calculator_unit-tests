@@ -7,6 +7,7 @@ const expect = chai.expect;
 
 describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
     let calculator, spyAdd, spyMultiply;
+    
             beforeEach(() => {
                 calculator = new Calculator();
                 spyAdd = chai.spy.on(calculator, 'add');
@@ -62,7 +63,6 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
                 expect(spyMultiply).to.have.been.called.with(...data);
                 expect(spyMultiply).to.have.been.called;
             });
-
         });
     });
 });

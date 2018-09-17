@@ -26,23 +26,23 @@ There is a list of modules and their versions:
 ## Structure 
 ### Folders:
 
-- [test] - there are all files and folders connected with tests;
+- [test](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/tree/master/test) - there are all files and folders connected with tests;
 - [node_modules] - will be created after [npm install] command. There will be stored all additional modules;
 - [reports] - will be created after the first run of [npm test] command. There will be stored all data that are need for report;
 - [.nyc-output] - will be created after the first run of [npm test] command. There will be stored all data for [nyc] module.
 
 ### Files in root:
 
-- [index.js] - main file in which you can find our Calculator class;
-- [.eslintignore] - all folders and files that should not be indexed by [eslint] are listed here;
-- [.eslintrc.js] - all rulles for [eslint] are placed there;
-- [.gitignore] -  all folders and files that should not be indexed by [git] are listed here;
-- [package.json] - includes all data for [npm]
-- [README.md] - readme file with special information about the application and git-syntacs. 
+- [index.js](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/index.js) - main file in which you can find our Calculator class;
+- [.eslintignore](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/.eslintignore) - all folders and files that should not be indexed by [eslint] are listed here;
+- [.eslintrc.js](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/.eslintrc.js) - all rulles for [eslint] are placed there;
+- [.gitignore](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/.gitignore) -  all folders and files that should not be indexed by [git] are listed here;
+- [package.json](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/package.json) - includes all data for [npm]
+- [README.md](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/README.md) - readme file with special information about the application and git-syntacs. 
 
 ## Usage
 
-There are some scripts in [package.json] that helps us.<br>
+There are some scripts in [package.json](https://github.com/KarneyenkaDzmitry/calculator_unit-tests/blob/master/package.json) that helps us.<br>
 
 * 1.[npm run linter] - check style and fix some marks in code. Afret have finished it write errors in console.
 * 2.[npm test] - run tests and at the end print results of tests coverage the Calculator class.

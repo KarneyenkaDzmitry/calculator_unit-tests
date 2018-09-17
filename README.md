@@ -58,23 +58,23 @@ It is wrong way. It is better to place [beforeEach()] outside [forEach] but insi
 
 ### chai-spies
 How to make checks with spy?<br>
- 1.make spy: <br>
+ 1. make spy: <br>
 `const someSpy = chai.spies.on(object, 'nameOfMethod');`<br><br>
- 2.use chai.expect for making assertion:<br>
+ 2. use chai.expect for making assertion:<br>
 `chai.expect(someSpy).to.have.been.called.with(data);`<br>
 [see documentation](http://www.chaijs.com/plugins/chai-spies/)<br>
 
 ### chai method throw
 How to make checks for Errors?<br>
-- 1.Create new function that will include tested method that have to throw an Error with data.<br>
+1. Create new function that will include tested method that have to throw an Error with data.<br>
 `e.g. const actualResult = () => calculator.add(data);`<br><br>
-- 2.Send it into check's method. further steps it does itself.It makes listener, runs method and catches an Error.<br>
+2. Send it into check's method. further steps it does itself.It makes listener, runs method and catches an Error.<br>
 `e.g. chai.expect(actualResult).to.throw(TypeError);`<br>
 [see documentation](https://www.chaijs.com/api/bdd/#method_throw)<br>
 
 ### Use spread operator - (...) for:
-- 1.Sending arguments into method from array;<br>
+1. Sending arguments into method from array;<br>
 `e.g. obj.functionName(...[a, b, c, d]) spread converts into obj.functionName(a, b, c, d) `<br><br>
-- 2.making array from arguments in functions;<br>
+2. making array from arguments in functions;<br>
 `e.g. function Name(...arg). If we call the function as obj.Name(a, b, c, d), so arg will be an array [a, b, c, d]`<br>
 

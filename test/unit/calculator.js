@@ -7,16 +7,16 @@ const expect = chai.expect;
 
 describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
     let calculator, spyAdd, spyMultiply;
-    
-            beforeEach(() => {
-                calculator = new Calculator();
-                spyAdd = chai.spy.on(calculator, 'add');
-                spyMultiply = chai.spy.on(calculator, 'multiply');
-            });
 
-            afterEach(() => {
-                calculator = null;
-            });
+    beforeEach(() => {
+        calculator = new Calculator();
+        spyAdd = chai.spy.on(calculator, 'add');
+        spyMultiply = chai.spy.on(calculator, 'multiply');
+    });
+
+    afterEach(() => {
+        calculator = null;
+    });
 
     describe('positive tests', () => {
         dataProvider.positive.forEach(element => {
@@ -24,8 +24,10 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
 
             it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
                 const actualResult = calculator.add(...data);
+                /* eslint-disable*/
                 expect(spyAdd).to.be.a.spy;
                 expect(spyAdd).to.have.been.called.once;
+                /* eslint-enable*/
                 expect(spyAdd).to.have.been.called.with(...data);
                 expect(actualResult).to.be.a('Number');
                 expect(actualResult).to.be.equal(element.result.add);
@@ -33,8 +35,10 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
 
             it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
                 const actualResult = calculator.multiply(...data);
+                /* eslint-disable*/
                 expect(spyMultiply).to.be.a.spy;
                 expect(spyMultiply).to.have.been.called.once;
+                /* eslint-enable*/
                 expect(spyMultiply).to.have.been.called.with(...data);
                 expect(actualResult).to.be.a('Number');
                 expect(actualResult).to.be.equal(element.result.multiply);
@@ -48,20 +52,22 @@ describe('tests methods [add] and [multiply] of Calculator.prototype ', () => {
 
             it(`the summation of [${element.data}] elements with result = [${element.result.add}]`, () => {
                 const actualResult = () => calculator.add(...data);
+                /* eslint-disable*/
                 expect(spyAdd).to.be.a.spy;
                 expect(actualResult).to.throw(TypeError);
                 expect(spyAdd).to.have.been.called.once;
+                /* eslint-enable*/
                 expect(spyAdd).to.have.been.called.with(...data);
-                expect(spyAdd).to.have.been.called;
             });
 
             it(`the multiplication of [${element.data}] elements with result = [${element.result.multiply}]`, () => {
                 const actualResult = () => calculator.multiply(...data);
+                /* eslint-disable */
                 expect(spyMultiply).to.be.a.spy;
                 expect(actualResult).to.throw(TypeError);
                 expect(spyMultiply).to.have.been.called.once;
+                /* eslint-enable */
                 expect(spyMultiply).to.have.been.called.with(...data);
-                expect(spyMultiply).to.have.been.called;
             });
         });
     });

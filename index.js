@@ -5,14 +5,14 @@ class Calculator {
     constructor() {
         this.result = 0;
     }
-    
+
     check(array) {
-        const nan = array.find((element)=>!this.isNumber(element));
+        const nan = array.find((element) => !this.isNumber(element));
         if (typeof nan !== 'undefined') throw new TypeError(`Was entered wrong parameter [${nan}] that isn't a number`);
     }
 
     isNumber(element) {
-        return typeof element === 'number' ? true : false;
+        return typeof element === 'number';
     }
 
     add(...args) {

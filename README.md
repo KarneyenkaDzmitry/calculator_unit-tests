@@ -56,6 +56,8 @@ Don't put [beforeEach()] in [forEach], because [beforeEach()] multiply on array 
 that causes running [beforeEach()] block before every it equals array.length times.<br>
 It is wrong way. It is better to place [beforeEach()] outside [forEach] but inside [describe] block.
 
+If you use two and more [beforeEach()] - -blocks, they are run in the order of one by one before every it block.
+
 ### chai-spies
 How to make checks with spy?<br>
  1. make spy: <br>
